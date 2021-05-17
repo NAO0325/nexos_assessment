@@ -8,4 +8,5 @@ Prueba técnica para empresa Nexos de **Napoleón Avila Ochoa**.
 6. LA versión de java utilizada fue 8.
 
 **NOTA:** Se incluye proyecto de postman con los end point y firmas de los servicios REST.
+
 Se entrega ultimo push a repositorio con fecha 17 de mayo 11:40am, según lo acordado en correo con **Maira Cristina Castrillon.**
