@@ -1,4 +1,10 @@
-# nexos_assessment
-Prueba técnica para empresa Nexos.
-1. En la carpeta model se encuentra el modelo de base de datos.
-2. En la carpeta assessment se encuentra el Backend de Spring Boot
+# Prueba Java Spring Boot Nexos
+Prueba técnica para empresa Nexos de **Napoleón Avila Ochoa**.
+1. En la carpeta assessment se encuentra el proyecto desarrollado en Spring Boot.
+2. Dentro de la carpeta resources se encuentran los ficheros (schemas.sql y data.slq) para la creación y registros iniciales en base de datos.
+3. Se empleo la base de datos oracle XE en si version 12.X.
+4. La versión de Spring Boot es 2.4.5.
+5. El IDE empleado para el desarrollo fue Netbeans 8.2 RC.
+6. LA versión de java utilizada fue 8.
+
+Se entrega ultimo push a repositorio con fecha 17 de mayo 11:40am, según lo acordado en correo con **Maira Cristina Castrillon.**
