@@ -60,6 +60,10 @@ public class Book implements Serializable {
     @Size(max = 50)
     @Column(name = "GENDER")
     private String gender;
+    
+    @NotNull
+    @Column(name = "PAGE_NUMBER")
+    private Integer pageNumber;
 
     @Column(name = "YEAR")
     private Integer year;

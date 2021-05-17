@@ -58,6 +58,18 @@ public class AuthorService implements AuthorServiceInterface {
         return lst;
     }
 
+    @Override
+    public AuthorDto finByName(String name) throws Exception {
+        if (StringUtils.isBlank(name)) {
+            return null;
+        }
+        Author author = repo.findByName(name.toLowerCase());
+        if (author == null || author.getId() == null) {
+            return null;
+        }
+        return mapper.mapAuthorObjectToDto(author);
+    }
+
     private boolean validateFields(AuthorDto dto, StringBuilder warn) {
 
         if (StringUtils.isBlank(dto.getName())) {

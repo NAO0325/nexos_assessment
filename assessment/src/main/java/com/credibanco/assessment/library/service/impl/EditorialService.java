@@ -58,6 +58,18 @@ public class EditorialService implements EditorialServiceInterface {
         return lst;
     }
 
+    @Override
+    public EditorialDto finByName(String name) throws Exception {
+        if (StringUtils.isBlank(name)) {
+            return null;
+        }
+        Editorial editorial = repo.findByName(name.toLowerCase());
+        if (editorial == null || editorial.getId() == null) {
+            return null;
+        }
+        return mapper.mapEditorialObjectToDto(editorial);
+    }
+
     private boolean validateFields(EditorialDto dto, StringBuilder warn) {
 
         if (StringUtils.isBlank(dto.getName())) {

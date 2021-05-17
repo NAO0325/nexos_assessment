@@ -36,6 +36,9 @@ public class BookDto {
 
     @XmlElement(required = false)
     private String gender;
+    
+    @XmlElement(required = false)
+    private Integer pages;
 
     @XmlElement(required = false)
     private Integer year;

@@ -15,4 +15,6 @@ public interface EditorialServiceInterface {
     EditorialDto createUpdate(EditorialDto dto, StringBuilder warn) throws Exception;
 
     List<EditorialDto> listAll() throws Exception;
+    
+    EditorialDto finByName(String name) throws Exception;
 }

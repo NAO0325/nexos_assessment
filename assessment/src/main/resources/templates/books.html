@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Spring Boot Thymeleaf Application - Utility Lists</title>
+    </head>
+    <body>
+
+        <h1>List of Books (number of books: <th:block th:text="${#lists.size(books)}">100</th:block>)</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Title </th>
+                    <th> Pages </th>
+                    <th> Gender </th>
+                    <th> Year </th>
+                    <th> Author </th>
+                    <th> Editorial </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${books.empty}">
+                    <td colspan="2"> List of Books is empty </td>
+                </tr>
+                <tr th:each="book : ${books}">
+                    <td><span th:text="${book.id}"> Id </span></td>
+                    <td><span th:text="${book.title}"> Title </span></td>
+                    <td><span th:text="${book.pages}"> Pages </span></td>
+                    <td><span th:text="${book.gender}"> Gender </span></td>
+                    <td><span th:text="${book.year}"> Year </span></td>
+                    <td><span th:text="${book.author}"> Author </span></td>
+                    <td><span th:text="${book.editorial}"> Editorial </span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>Sorted by Title</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Title </th>
+                    <th> Pages </th>
+                    <th> Gender </th>
+                    <th> Year </th>
+                    <th> Author </th>
+                    <th> Editorial </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${books.empty}">
+                    <td colspan="2"> List of Books is empty </td>
+                </tr>
+                <tr th:each="book : ${#lists.sort(books, byTitle)}">
+                    <td><span th:text="${book.id}"> Id </span></td>
+                    <td><span th:text="${book.title}"> Title </span></td>
+                    <td><span th:text="${book.pages}"> Pages </span></td>
+                    <td><span th:text="${book.gender}"> Gender </span></td>
+                    <td><span th:text="${book.year}"> Year </span></td>
+                    <td><span th:text="${book.author}"> Author </span></td>
+                    <td><span th:text="${book.editorial}"> Editorial </span></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -25,6 +25,7 @@ public class BookMapperImpl implements BookMapper {
         dto.setAuthor(obj.getAuthor().getAuthorName());
         dto.setEditorial(obj.getEditorial().getEditorialName());
         dto.setGender(obj.getGender());
+        dto.setPages(obj.getPageNumber());
         dto.setYear(obj.getYear());
         return dto;
     }
@@ -44,6 +45,7 @@ public class BookMapperImpl implements BookMapper {
         obj.setEditorial(e);
         obj.setAuthor(a);
         obj.setGender(dto.getGender());
+        obj.setPageNumber(dto.getPages());
         obj.setYear(dto.getYear());
         return obj;
     }

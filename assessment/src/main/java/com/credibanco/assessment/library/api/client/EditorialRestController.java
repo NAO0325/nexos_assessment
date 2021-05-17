@@ -3,10 +3,10 @@
  */
 package com.credibanco.assessment.library.api.client;
 
-import com.credibanco.assessment.library.dto.AuthorDto;
+import com.credibanco.assessment.library.dto.EditorialDto;
 import com.credibanco.assessment.library.dto.MensajeOutDto;
 import com.credibanco.assessment.library.exceptions.RecordNotFoundException;
-import com.credibanco.assessment.library.service.AuthorServiceInterface;
+import com.credibanco.assessment.library.service.EditorialServiceInterface;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,11 +24,11 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
  */
 //@CrossOrigin(origins = "http://localhost:8084")
 @RestController
-@RequestMapping("/api/author")
-public class AuthorController extends WebServiceGatewaySupport {
+@RequestMapping("/api/editorial")
+public class EditorialRestController extends WebServiceGatewaySupport {
 
     @Autowired
-    AuthorServiceInterface service;
+    EditorialServiceInterface service;
 
     @GetMapping(value = "/test")
     public ResponseEntity test() throws Exception {
@@ -38,25 +38,25 @@ public class AuthorController extends WebServiceGatewaySupport {
     }
 
     @PostMapping(value = "/createUpdate")
-    public ResponseEntity createUpdate(@RequestBody AuthorDto dto) throws Exception {
+    public ResponseEntity createUpdate(@RequestBody EditorialDto dto) throws Exception {
         StringBuilder warn = new StringBuilder();
-        AuthorDto res = service.createUpdate(dto, warn);
+        EditorialDto res = service.createUpdate(dto, warn);
         if (warn.length() > 0) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(new MensajeOutDto(warn.toString()));
         }
         if (res == null) {
-            throw new RecordNotFoundException("No se recupero información del registro del author");
+            throw new RecordNotFoundException("No se recupero información del registro de la editorial");
         }
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(res);
     }
 
-    @GetMapping(value = "/allAuthor")
-    public ResponseEntity allAuthor() throws Exception {
-        List<AuthorDto> listAll = service.listAll();
+    @GetMapping(value = "/allEditorial")
+    public ResponseEntity allEditorial() throws Exception {
+        List<EditorialDto> listAll = service.listAll();
         if (listAll.isEmpty()) {
             throw new RecordNotFoundException("No se encontraron registros");
         }

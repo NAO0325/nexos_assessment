@@ -15,4 +15,6 @@ public interface AuthorServiceInterface {
     AuthorDto createUpdate(AuthorDto dto, StringBuilder warn) throws Exception;
     
     List<AuthorDto> listAll() throws Exception;
+    
+    AuthorDto finByName(String name) throws Exception;
 }
