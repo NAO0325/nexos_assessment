@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface EditorialRepository extends JpaRepository<Editorial, Long> {
 
-    @Query("SELECT e FROM Editorial e WHERE LOWER(e.editorialName) = ?1 ")
+    @Query("SELECT e FROM Editorial e WHERE (LOWER(e.editorialName) = ?1 OR LOWER(e.editorialName) LIKE %?1%)")
     Editorial findByName(String name);
 
 }

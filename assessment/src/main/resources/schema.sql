@@ -1,3 +1,10 @@
+/* 
+ * Nexos Software
+ */
+/**
+ * Author:  Napoleon Avila Ochoa
+ * Created: 14/05/2021
+ */
 /*--Borrar tabla
 Drop Table LIB_EDITORIAL_TB;
 Drop sequence LIB_EDITORIAL_SQ;
@@ -83,7 +90,7 @@ COMMENT ON COLUMN "LIB_AUTHOR_TB"."AUTHOR_ID" IS 'Identificador Autoincremental 
 COMMENT ON COLUMN "LIB_AUTHOR_TB"."AUTHOR_NAME" IS 'Nombre completo del autor';
 COMMENT ON COLUMN "LIB_AUTHOR_TB"."DATE_OF_BIRTH" IS 'Fecha de nacimiento del autor';
 COMMENT ON COLUMN "LIB_AUTHOR_TB"."CITY_OF_ORIGIN" IS 'Ciudad de origen del autor';
-COMMENT ON COLUMN "LIB_AUTHOR_TB"."EMAIL" IS 'Usuario quien realizo el registro';
+COMMENT ON COLUMN "LIB_AUTHOR_TB"."EMAIL" IS 'Email del autor';
 COMMENT ON COLUMN "LIB_AUTHOR_TB"."CREATED_AT" IS 'Fecha en que se realizo el registro';
 COMMENT ON COLUMN "LIB_AUTHOR_TB"."UPDATED_AT" IS 'Fecha en que se realizo modificacion del registro';
 COMMENT ON TABLE "LIB_AUTHOR_TB"  IS 'Tabla contiene registro de autores';
@@ -99,6 +106,7 @@ CREATE TABLE LIB_BOOK_TB (
 	"AUTHOR_ID" NUMBER(15,0) NOT NULL ENABLE,
 	"TITLE" VARCHAR(200 BYTE)  DEFAULT ' ' NOT NULL ENABLE,
 	"GENDER" VARCHAR(50 BYTE)  DEFAULT ' ' NOT NULL ENABLE,
+	"PAGE_NUMBER" NUMBER(5,0)  DEFAULT 1 NOT NULL ENABLE,
 	"YEAR" NUMBER(4,0) DEFAULT NULL,
 	"CREATED_AT" TIMESTAMP (6) DEFAULT CURRENT_TIMESTAMP NOT NULL ENABLE,
 	"UPDATED_AT" TIMESTAMP (6) DEFAULT CURRENT_TIMESTAMP NOT NULL ENABLE,
@@ -133,8 +141,10 @@ COMMENT ON COLUMN "LIB_BOOK_TB"."EDITORIAL_ID" IS 'Llave forenea de la entidad a
 COMMENT ON COLUMN "LIB_BOOK_TB"."AUTHOR_ID" IS 'Llave forenea de la entidad asociada a tabla autor';
 COMMENT ON COLUMN "LIB_BOOK_TB"."TITLE" IS 'Titulo del libro';
 COMMENT ON COLUMN "LIB_BOOK_TB"."GENDER" IS 'Genero del libro';
+COMMENT ON COLUMN "LIB_BOOK_TB"."PAGE_NUMBER" IS 'Numero de paginas del libro';
 COMMENT ON COLUMN "LIB_BOOK_TB"."YEAR" IS 'Año de publicacion del libro';
 COMMENT ON COLUMN "LIB_BOOK_TB"."CREATED_AT" IS 'Fecha en que se realizo el registro';
 COMMENT ON COLUMN "LIB_BOOK_TB"."UPDATED_AT" IS 'Fecha en que se realizo modificacion del regsitro';
 COMMENT ON TABLE "LIB_BOOK_TB"  IS 'Tabla contiene registro de los libros en una libreria';
 /
+

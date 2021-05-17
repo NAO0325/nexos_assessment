@@ -1,5 +1,21 @@
 server:
         port: 8084
+
+info:
+    app:
+        description: Spring Boot Actuador Assessment
+        name: Spring Boot Actuator Assessment
+        version: v1.0.0
+        
+management:
+    endpoints:
+################## Iniciar todos los puntos finales ###################
+        enabled-by-default: true
+        web:
+# Personalizar la ruta del punto final de gestión base-path=/manage
+# exposure.exclude = env,beans
+            exposure:
+                include: '*'
 spring:
 ################### DataSource Configuration ##########################
     datasource:

@@ -7,6 +7,12 @@
     <body>
 
         <h1>List of Books (number of books: <th:block th:text="${#lists.size(books)}">100</th:block>)</h1>
+
+        <form action="#" th:action="@{/books}" method="post">
+            Find by: <input type="text" size="50" id="search_" name="search_" placeholder="Title, Gender, Year, Author, Editorial"/>
+            <input type="submit" id="searchButton_" name="search" th:value="Search"/>
+        </form>
+
         <table>
             <thead>
                 <tr>

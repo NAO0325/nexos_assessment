@@ -13,6 +13,6 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 
-    @Query("SELECT a FROM Author a WHERE LOWER(a.authorName) = ?1 ")
+    @Query("SELECT a FROM Author a WHERE (LOWER(a.authorName) = ?1 OR LOWER(a.authorName) LIKE %?1%)")
     Author findByName(String name);
 }
