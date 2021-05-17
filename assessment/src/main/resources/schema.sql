@@ -147,4 +147,3 @@ COMMENT ON COLUMN "LIB_BOOK_TB"."CREATED_AT" IS 'Fecha en que se realizo el regi
 COMMENT ON COLUMN "LIB_BOOK_TB"."UPDATED_AT" IS 'Fecha en que se realizo modificacion del regsitro';
 COMMENT ON TABLE "LIB_BOOK_TB"  IS 'Tabla contiene registro de los libros en una libreria';
 /
-
